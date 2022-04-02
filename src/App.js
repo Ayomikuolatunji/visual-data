@@ -1,6 +1,6 @@
 import './App.css';
-
-
+import {arc} from "d3-shape"
+console.log(arc)
 const width=960;
 const height=960;
 
@@ -11,10 +11,21 @@ const eyeOffsetX=90;
 const eyeOffsetY=100
 const eyeRadius=40;
 
+
+const mouthArc=arc()
+.innerRadius(90)
+.outerRadius(100)
+.startAngle(0)
+.endAngle(Math.PI * 2);
+
+
+console.log(mouthArc)
+
 function App() {
   return (
     <div className="Apsp">
          <svg width={width} height={height}>
+             <g>
              <circle 
              r="200"
              cx={centerX}
@@ -36,7 +47,8 @@ function App() {
                r={eyeRadius}
              >
              </circle>
-
+            <path d={mouthArc()} />
+             </g>
          </svg>
     </div>
   );
