@@ -19,8 +19,14 @@ const mouthArc=arc()
 .outerRadius(mouthRadius + mouthWidth)
 .startAngle(Math.PI/2)
 .endAngle(Math.PI * 3 /2);
+  
 
 
+const teeth=[]
+var foo = new Array(45);
+for(var i = 0; i < foo.length; i++){
+  teeth.push(i)
+}
 
 function App() {
   return (
@@ -40,6 +46,7 @@ function App() {
                r={eyeRadius}
              >
              </circle>
+             
              <circle
                cx={eyeOffsetX}
                cy={-eyeOffsetY}
