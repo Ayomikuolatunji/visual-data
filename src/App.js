@@ -25,25 +25,23 @@ function App() {
   return (
     <div className="Apsp">
          <svg width={width} height={height}>
-             <g>
+             <g transform={`translate(${centerX}, ${centerY})`}>
              <circle 
              r="200"
-             cx={centerX}
-             cy={centerY}
              fill='yellow'
              stroke='black'
              strokeWidth={strokwidth}
              >
              </circle>
              <circle
-               cx={centerX - eyeOffsetX}
-               cy={centerY - eyeOffsetY}
+               cx={-eyeOffsetX}
+               cy={-eyeOffsetY}
                r={eyeRadius}
              >
              </circle>
              <circle
-               cx={centerX + eyeOffsetX}
-               cy={centerY - eyeOffsetY}
+               cx={eyeOffsetX}
+               cy={-eyeOffsetY}
                r={eyeRadius}
              >
              </circle>
